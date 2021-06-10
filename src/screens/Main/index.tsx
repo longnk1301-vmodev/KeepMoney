@@ -1,23 +1,18 @@
 import React from 'react';
-import {StyleSheet, ImageBackground} from 'react-native';
-import LoginScreen from '../Auth/Login';
-import {Colors} from '../../constants/Colors';
+import {StyleSheet, View} from 'react-native';
+import LoginScreen from '../Auth/SignIn';
 
 const MainScreen = () => {
   return (
-    <ImageBackground
-      source={require('../../assets/background.jpeg')}
-      style={styles.wrapper}>
+    <View style={styles.wrapper}>
       <LoginScreen />
-    </ImageBackground>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: Colors.backgroundColor,
-    padding: 10,
   },
 });
 

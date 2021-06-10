@@ -29,4 +29,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  signUpText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  signUpButton: {
+    marginTop: 15,
+  },
 });

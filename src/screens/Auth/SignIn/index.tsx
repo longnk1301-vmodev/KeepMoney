@@ -10,7 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import {RootScreenProp} from '../../../navigators/HomeNavigator';
 import {styles} from '../Register/styles';
 
-const RegisterScreen = () => {
+const LoginScreen = () => {
   const navigation = useNavigation<RootScreenProp>();
 
   const onLogin = () => {
@@ -18,7 +18,7 @@ const RegisterScreen = () => {
   };
 
   const onNavigateToSignUp = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate('SignUp');
   };
 
   return (
@@ -26,22 +26,20 @@ const RegisterScreen = () => {
       source={require('../../../assets/background.jpeg')}
       style={styles.container}>
       <View style={styles.container}>
-        <Text style={styles.title}>Sign Up</Text>
+        <Text style={styles.title}>Sign In</Text>
         <View>
           <TextInput style={styles.input} placeholder="User name" />
           <TextInput style={styles.input} placeholder="Password" />
-          <TextInput style={styles.input} placeholder="Confirm Password" />
         </View>
         <TouchableOpacity onPress={onLogin} style={styles.button}>
-          <Text>Ok</Text>
+          <Text>click</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.signUpButton}
           onPress={onNavigateToSignUp}>
           <Text>
-            Already have account,{' '}
-            <Text style={styles.signUpText}>Sign In!</Text>
+            Don't have account, <Text style={styles.signUpText}>Sign up!</Text>
           </Text>
         </TouchableOpacity>
       </View>
@@ -49,4 +47,4 @@ const RegisterScreen = () => {
   );
 };
 
-export default RegisterScreen;
+export default LoginScreen;
