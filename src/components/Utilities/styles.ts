@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     margin: 5,
     width: 40,
     height: 40,
-    backgroundColor: Colors.backgroundItem,
+    backgroundColor: Colors.buttonColor,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
