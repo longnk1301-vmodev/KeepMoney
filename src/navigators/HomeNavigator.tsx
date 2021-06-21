@@ -5,7 +5,7 @@ import {
 } from '@react-navigation/stack';
 
 import MainContainer from '../screens/Main';
-import LoginContainer from '../screens/Auth/SignIn';
+import SignInContainer from '../containers/SignIn';
 import RegisterContainer from '../screens/Auth/Register';
 import HomeContainer from '../screens/Home';
 
@@ -30,7 +30,7 @@ const HomeNavigator = () => (
     <Stack.Screen
       options={{headerShown: false}}
       name="SignIn"
-      component={LoginContainer}
+      component={SignInContainer}
     />
     <Stack.Screen
       options={{headerShown: false}}

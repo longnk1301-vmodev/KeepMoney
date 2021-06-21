@@ -1,11 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import LoginScreen from '../Auth/SignIn';
+import SignInContainer from '../../containers/SignIn';
 
+//TODO: we can handle splash screen in here
 const MainScreen = () => {
   return (
     <View style={styles.wrapper}>
-      <LoginScreen />
+      <SignInContainer />
     </View>
   );
 };

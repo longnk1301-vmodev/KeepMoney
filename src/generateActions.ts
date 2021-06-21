@@ -1,7 +1,10 @@
 import {createAction} from 'redux-actions';
 
-export default function generateCustomActions(namespace, postfixesActions) {
-  const obj = {};
+export default function generateCustomActions(
+  namespace: string,
+  postfixesActions: string[],
+) {
+  let obj = {};
 
   postfixesActions.forEach(postfix => {
     const name = `${namespace}/${postfix}`;
