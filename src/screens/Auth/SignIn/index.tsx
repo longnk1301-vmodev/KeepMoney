@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import {
   View,
@@ -9,16 +10,23 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {RootScreenProp} from '../../../navigators/HomeNavigator';
 import {styles} from '../Register/styles';
+import {NAVIGATION} from '../../../constants/Common';
 
-const LoginScreen = () => {
+interface ISignIn {
+  signIn: () => any;
+  loading: boolean;
+}
+
+const LoginScreen = ({signIn, loading}: ISignIn) => {
   const navigation = useNavigation<RootScreenProp>();
 
   const onLogin = () => {
-    navigation.replace('Home');
+    signIn('user', '111');
+    navigation.replace(NAVIGATION.HOME);
   };
 
   const onNavigateToSignUp = () => {
-    navigation.navigate('SignUp');
+    navigation.navigate(NAVIGATION.SIGN_UP);
   };
 
   return (

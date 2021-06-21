@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {put, takeLatest, all} from 'redux-saga/effects';
+import {call, put, takeLatest, all} from 'redux-saga/effects';
 import Actions from './actions';
 import ServiceLocator, {services} from '../services/serviceLocator';
 import {loadAppEnv} from '../utils/env';
+import {CALL_SUCCESS} from '../constants/Common';
 
 let mockService = null;
 
@@ -17,10 +18,18 @@ const generatorToPromise = fn => () => {
   });
 };
 
-function* loginUser() {
-  try {
-    yield put(Actions['SIGN_IN_USER/FETCH_SUCCESSFUL']({}));
-  } catch (error) {}
+function* loginUser(action: any) {
+  const {username, password} = action.payload;
+
+  const response = yield call(
+    generatorToPromise(mockService.signIn(username, password)),
+  );
+
+  if (response.message === CALL_SUCCESS) {
+    yield put(
+      Actions['SIGN_IN_USER/FETCH_SUCCESSFUL']({userInfo: response.data}),
+    );
+  }
 }
 
 function* loginSaga() {

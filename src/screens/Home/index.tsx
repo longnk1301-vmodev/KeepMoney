@@ -9,11 +9,15 @@ import SpendingAnalysis from '../../components/SpendingAnalysis';
 import Saving from '../../components/Saving';
 import {styles} from './styles';
 
-const HomeScreen = () => {
+interface IHome {
+  userInfo?: any;
+}
+
+const HomeScreen = ({userInfo}: IHome) => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container}>
-        <Header />
+        <Header userInfo={userInfo} />
         <Revenue />
         <SpendingLimit />
         <LookupRate />

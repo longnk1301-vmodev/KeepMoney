@@ -10,6 +10,7 @@ function CustomAppLoading({onFinishLoading}) {
   }
 
   useEffect(() => {
+    //load env, fonts,... in here
     Promise.all([loadAppEnv()]).then(handleFinishLoading, handleLoadingError);
   });
 

@@ -3,7 +3,13 @@ import {connect} from 'react-redux';
 import SignInScreen from '../../screens/Auth/SignIn';
 
 const mapDispatchToProps = (dispatch: any) => ({
-  SignInScreen: () => dispatch(Actions['SIGN_IN_USER/FETCH']()),
+  signIn: (username: string, password: string) =>
+    dispatch(
+      Actions['SIGN_IN_USER/FETCH']({
+        username,
+        password,
+      }),
+    ),
 });
 
 const mapStateToProps = (state: any) => {

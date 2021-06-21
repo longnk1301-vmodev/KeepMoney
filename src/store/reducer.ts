@@ -15,10 +15,11 @@ const reducer = handleActions(
         },
       });
     },
-    [Actions['SIGN_IN_USER/FETCH_SUCCESSFUL']]: state => {
+    [Actions['SIGN_IN_USER/FETCH_SUCCESSFUL']]: (state, action) => {
       return update(state, {
         $merge: {
           loading: false,
+          userInfo: action.payload.userInfo,
         },
       });
     },

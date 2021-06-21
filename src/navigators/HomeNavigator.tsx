@@ -7,7 +7,8 @@ import {
 import MainContainer from '../screens/Main';
 import SignInContainer from '../containers/SignIn';
 import RegisterContainer from '../screens/Auth/Register';
-import HomeContainer from '../screens/Home';
+import HomeContainer from '../containers/Home';
+import {NAVIGATION} from '../constants/Common';
 
 export type RootStackParamList = {
   Main: undefined;
@@ -24,22 +25,22 @@ const HomeNavigator = () => (
   <Stack.Navigator>
     <Stack.Screen
       options={{headerShown: false}}
-      name="Main"
+      name={NAVIGATION.MAIN}
       component={MainContainer}
     />
     <Stack.Screen
       options={{headerShown: false}}
-      name="SignIn"
+      name={NAVIGATION.SIGN_IN}
       component={SignInContainer}
     />
     <Stack.Screen
       options={{headerShown: false}}
-      name="SignUp"
+      name={NAVIGATION.SIGN_UP}
       component={RegisterContainer}
     />
     <Stack.Screen
       options={{headerShown: false}}
-      name="Home"
+      name={NAVIGATION.HOME}
       component={HomeContainer}
     />
   </Stack.Navigator>

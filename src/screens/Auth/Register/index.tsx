@@ -9,16 +9,17 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {RootScreenProp} from '../../../navigators/HomeNavigator';
 import {styles} from '../Register/styles';
+import {NAVIGATION} from '../../../constants/Common';
 
 const RegisterScreen = () => {
   const navigation = useNavigation<RootScreenProp>();
 
   const onLogin = () => {
-    navigation.replace('Home');
+    navigation.replace(NAVIGATION.HOME);
   };
 
   const onNavigateToSignUp = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate(NAVIGATION.SIGN_IN);
   };
 
   return (
