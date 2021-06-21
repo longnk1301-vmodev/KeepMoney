@@ -6,7 +6,7 @@ import {
 
 import MainContainer from '../screens/Main';
 import SignInContainer from '../containers/SignIn';
-import RegisterContainer from '../screens/Auth/Register';
+import SignUpContainer from '../containers/SignUp';
 import HomeContainer from '../containers/Home';
 import {NAVIGATION} from '../constants/Common';
 
@@ -36,7 +36,7 @@ const HomeNavigator = () => (
     <Stack.Screen
       options={{headerShown: false}}
       name={NAVIGATION.SIGN_UP}
-      component={RegisterContainer}
+      component={SignUpContainer}
     />
     <Stack.Screen
       options={{headerShown: false}}

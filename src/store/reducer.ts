@@ -30,6 +30,29 @@ const reducer = handleActions(
         },
       });
     },
+
+    [Actions['SIGN_UP/FETCH']]: state => {
+      return update(state, {
+        $merge: {
+          loading: true,
+        },
+      });
+    },
+    [Actions['SIGN_UP/FETCH_SUCCESSFUL']]: (state, action) => {
+      return update(state, {
+        $merge: {
+          loading: false,
+          userInfo: action.payload.userInfo,
+        },
+      });
+    },
+    [Actions['SIGN_UP/FETCH_ERROR']]: state => {
+      return update(state, {
+        $merge: {
+          loading: false,
+        },
+      });
+    },
   },
   initialState,
 );
