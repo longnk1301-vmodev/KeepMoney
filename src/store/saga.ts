@@ -36,6 +36,22 @@ function* loginSaga() {
   yield takeLatest(Actions['SIGN_IN_USER/FETCH'], loginUser);
 }
 
+function* signUpUser(action: any) {
+  const {username, password, confirmPassword} = action.payload;
+
+  const response = yield call(
+    generatorToPromise(mockService.signUp(username, password, confirmPassword)),
+  );
+
+  if (response.message === CALL_SUCCESS) {
+    yield put(Actions['SIGN_UP/FETCH_SUCCESSFUL']({userInfo: response.data}));
+  }
+}
+
+function* signUpSaga() {
+  yield takeLatest(Actions['SIGN_UP/FETCH'], signUpUser);
+}
+
 export default function* rootSaga() {
-  yield all([loginSaga()]);
+  yield all([loginSaga(), signUpSaga()]);
 }

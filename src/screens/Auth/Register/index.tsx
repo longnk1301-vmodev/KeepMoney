@@ -11,10 +11,16 @@ import {RootScreenProp} from '../../../navigators/HomeNavigator';
 import {styles} from '../Register/styles';
 import {NAVIGATION} from '../../../constants/Common';
 
-const RegisterScreen = () => {
+interface ISignUp {
+  signUp: () => any;
+  loading: boolean;
+}
+
+const RegisterScreen = ({signUp}: ISignUp) => {
   const navigation = useNavigation<RootScreenProp>();
 
-  const onLogin = () => {
+  const onSignUp = () => {
+    signUp('username', 'password', 'confirmPassword');
     navigation.replace(NAVIGATION.HOME);
   };
 
@@ -33,7 +39,7 @@ const RegisterScreen = () => {
           <TextInput style={styles.input} placeholder="Password" />
           <TextInput style={styles.input} placeholder="Confirm Password" />
         </View>
-        <TouchableOpacity onPress={onLogin} style={styles.button}>
+        <TouchableOpacity onPress={onSignUp} style={styles.button}>
           <Text>Ok</Text>
         </TouchableOpacity>
 

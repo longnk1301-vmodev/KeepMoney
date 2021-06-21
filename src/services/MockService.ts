@@ -15,4 +15,11 @@ export default class MockService {
     console.log('password', password);
     return signIn;
   }
+
+  async signUp(username: string, password: string, confirmPassword: string) {
+    console.log('username', username);
+    console.log('password', password);
+    console.log('confirmPassword', confirmPassword);
+    return signIn;
+  }
 }
